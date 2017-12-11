@@ -2648,3 +2648,216 @@ DEBUG - 2017-12-11 06:24:52 --> Bonfire MY_Lang: Language file loaded: '/Applica
 DEBUG - 2017-12-11 06:24:52 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/views/profiler_template.php
 INFO - 2017-12-11 06:24:52 --> Final output sent to browser
 DEBUG - 2017-12-11 06:24:52 --> Total execution time: 0.2603
+INFO - 2017-12-11 06:27:55 --> Config Class Initialized
+INFO - 2017-12-11 06:27:55 --> Hooks Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> UTF-8 Support Enabled
+INFO - 2017-12-11 06:27:55 --> Utf8 Class Initialized
+INFO - 2017-12-11 06:27:55 --> URI Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/config/application.php
+INFO - 2017-12-11 06:27:55 --> Router Class Initialized
+INFO - 2017-12-11 06:27:55 --> BF_Router class initialized
+INFO - 2017-12-11 06:27:55 --> Output Class Initialized
+INFO - 2017-12-11 06:27:55 --> Security Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-12-11 06:27:55 --> Input Class Initialized
+INFO - 2017-12-11 06:27:55 --> Language Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> BF_Lang: Language Class Initialized
+INFO - 2017-12-11 06:27:55 --> Config Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> BF_Loader Class Initialized
+INFO - 2017-12-11 06:27:55 --> Loader Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/config/application.php
+INFO - 2017-12-11 06:27:55 --> Helper loaded: url_helper
+INFO - 2017-12-11 06:27:55 --> Helper loaded: language_helper
+INFO - 2017-12-11 06:27:55 --> Database Driver Class Initialized
+INFO - 2017-12-11 06:27:55 --> Controller Class Initialized
+INFO - 2017-12-11 06:27:55 --> Session: Class initialized using 'database' driver.
+DEBUG - 2017-12-11 06:27:55 --> Content MX_Controller Initialized
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/settings/libraries/settings_lib.php
+INFO - 2017-12-11 06:27:55 --> Model Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/settings/models/settings_model.php
+INFO - 2017-12-11 06:27:55 --> Model Class Initialized
+INFO - 2017-12-11 06:27:55 --> Helper loaded: config_file_helper
+INFO - 2017-12-11 06:27:55 --> Helper loaded: directory_helper
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/ui/libraries/contexts.php
+DEBUG - 2017-12-11 06:27:55 --> UI/Contexts setContexts has been called.
+DEBUG - 2017-12-11 06:27:55 --> UI/Contexts library loaded
+DEBUG - 2017-12-11 06:27:55 --> Template library loaded
+DEBUG - 2017-12-11 06:27:55 --> Assets library loaded.
+INFO - 2017-12-11 06:27:55 --> Helper loaded: form_helper
+INFO - 2017-12-11 06:27:55 --> Form Validation Class Initialized
+INFO - 2017-12-11 06:27:55 --> Helper loaded: application_helper
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/libraries/auth.php
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/language/english/users_lang.php
+DEBUG - 2017-12-11 06:27:55 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/language/english/users_lang'
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/models/user_model.php
+INFO - 2017-12-11 06:27:55 --> Model Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> Auth class initialized.
+DEBUG - 2017-12-11 06:27:55 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/language/english/application_lang.php'
+DEBUG - 2017-12-11 06:27:55 --> Forensics Console library loaded
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/permissions/models/permission_model.php
+INFO - 2017-12-11 06:27:55 --> Model Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/roles/models/role_permission_model.php
+INFO - 2017-12-11 06:27:55 --> Model Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/dashboard/language/english/dashboard_lang.php
+DEBUG - 2017-12-11 06:27:55 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/dashboard/language/english/dashboard_lang'
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/activities/models/activity_model.php
+INFO - 2017-12-11 06:27:55 --> Model Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/activities/language/english/activities_lang.php
+DEBUG - 2017-12-11 06:27:55 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/activities/language/english/activities_lang'
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/datausulan/models/datausulan_model.php
+INFO - 2017-12-11 06:27:55 --> Model Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/informasidatausulan/models/informasidatausulan_model.php
+INFO - 2017-12-11 06:27:55 --> Model Class Initialized
+INFO - 2017-12-11 06:27:55 --> User Agent Class Initialized
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/ui/views/shortcut_keys.php
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/public/themes/admin/partials/_header.php
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/dashboard/views/content/index.php
+DEBUG - 2017-12-11 06:27:55 --> User_agent class already loaded. Second attempt ignored.
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/public/themes/admin/partials/_footer.php
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/public/themes/admin/index.php
+DEBUG - 2017-12-11 06:27:55 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/ci3/language/english/profiler_lang.php'
+DEBUG - 2017-12-11 06:27:55 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/views/profiler_template.php
+INFO - 2017-12-11 06:27:55 --> Final output sent to browser
+DEBUG - 2017-12-11 06:27:55 --> Total execution time: 0.2108
+INFO - 2017-12-11 06:28:06 --> Config Class Initialized
+INFO - 2017-12-11 06:28:06 --> Hooks Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> UTF-8 Support Enabled
+INFO - 2017-12-11 06:28:06 --> Utf8 Class Initialized
+INFO - 2017-12-11 06:28:06 --> URI Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/config/application.php
+INFO - 2017-12-11 06:28:06 --> Router Class Initialized
+INFO - 2017-12-11 06:28:06 --> BF_Router class initialized
+INFO - 2017-12-11 06:28:06 --> Output Class Initialized
+INFO - 2017-12-11 06:28:06 --> Security Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-12-11 06:28:06 --> Input Class Initialized
+INFO - 2017-12-11 06:28:06 --> Language Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> BF_Lang: Language Class Initialized
+INFO - 2017-12-11 06:28:06 --> Config Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> BF_Loader Class Initialized
+INFO - 2017-12-11 06:28:06 --> Loader Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/config/application.php
+INFO - 2017-12-11 06:28:06 --> Helper loaded: url_helper
+INFO - 2017-12-11 06:28:06 --> Helper loaded: language_helper
+INFO - 2017-12-11 06:28:06 --> Database Driver Class Initialized
+INFO - 2017-12-11 06:28:06 --> Controller Class Initialized
+INFO - 2017-12-11 06:28:06 --> Session: Class initialized using 'database' driver.
+DEBUG - 2017-12-11 06:28:06 --> Content MX_Controller Initialized
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/settings/libraries/settings_lib.php
+INFO - 2017-12-11 06:28:06 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/settings/models/settings_model.php
+INFO - 2017-12-11 06:28:06 --> Model Class Initialized
+INFO - 2017-12-11 06:28:06 --> Helper loaded: config_file_helper
+INFO - 2017-12-11 06:28:06 --> Helper loaded: directory_helper
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/ui/libraries/contexts.php
+DEBUG - 2017-12-11 06:28:06 --> UI/Contexts setContexts has been called.
+DEBUG - 2017-12-11 06:28:06 --> UI/Contexts library loaded
+DEBUG - 2017-12-11 06:28:06 --> Template library loaded
+DEBUG - 2017-12-11 06:28:06 --> Assets library loaded.
+INFO - 2017-12-11 06:28:06 --> Helper loaded: form_helper
+INFO - 2017-12-11 06:28:06 --> Form Validation Class Initialized
+INFO - 2017-12-11 06:28:06 --> Helper loaded: application_helper
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/libraries/auth.php
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/language/english/users_lang.php
+DEBUG - 2017-12-11 06:28:06 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/language/english/users_lang'
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/models/user_model.php
+INFO - 2017-12-11 06:28:06 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> Auth class initialized.
+DEBUG - 2017-12-11 06:28:06 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/language/english/application_lang.php'
+DEBUG - 2017-12-11 06:28:06 --> Forensics Console library loaded
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/permissions/models/permission_model.php
+INFO - 2017-12-11 06:28:06 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/roles/models/role_permission_model.php
+INFO - 2017-12-11 06:28:06 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/dashboard/language/english/dashboard_lang.php
+DEBUG - 2017-12-11 06:28:06 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/dashboard/language/english/dashboard_lang'
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/activities/models/activity_model.php
+INFO - 2017-12-11 06:28:06 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/activities/language/english/activities_lang.php
+DEBUG - 2017-12-11 06:28:06 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/activities/language/english/activities_lang'
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/datausulan/models/datausulan_model.php
+INFO - 2017-12-11 06:28:06 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/informasidatausulan/models/informasidatausulan_model.php
+INFO - 2017-12-11 06:28:06 --> Model Class Initialized
+INFO - 2017-12-11 06:28:06 --> User Agent Class Initialized
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/ui/views/shortcut_keys.php
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/public/themes/admin/partials/_header.php
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/dashboard/views/content/index.php
+DEBUG - 2017-12-11 06:28:06 --> User_agent class already loaded. Second attempt ignored.
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/public/themes/admin/partials/_footer.php
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/public/themes/admin/index.php
+DEBUG - 2017-12-11 06:28:06 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/ci3/language/english/profiler_lang.php'
+DEBUG - 2017-12-11 06:28:06 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/views/profiler_template.php
+INFO - 2017-12-11 06:28:06 --> Final output sent to browser
+DEBUG - 2017-12-11 06:28:06 --> Total execution time: 0.1283
+INFO - 2017-12-11 06:28:16 --> Config Class Initialized
+INFO - 2017-12-11 06:28:16 --> Hooks Class Initialized
+DEBUG - 2017-12-11 06:28:16 --> UTF-8 Support Enabled
+INFO - 2017-12-11 06:28:16 --> Utf8 Class Initialized
+INFO - 2017-12-11 06:28:16 --> URI Class Initialized
+DEBUG - 2017-12-11 06:28:16 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/config/application.php
+INFO - 2017-12-11 06:28:16 --> Router Class Initialized
+INFO - 2017-12-11 06:28:16 --> BF_Router class initialized
+INFO - 2017-12-11 06:28:16 --> Output Class Initialized
+INFO - 2017-12-11 06:28:17 --> Security Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2017-12-11 06:28:17 --> Input Class Initialized
+INFO - 2017-12-11 06:28:17 --> Language Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> BF_Lang: Language Class Initialized
+INFO - 2017-12-11 06:28:17 --> Config Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> BF_Loader Class Initialized
+INFO - 2017-12-11 06:28:17 --> Loader Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/config/application.php
+INFO - 2017-12-11 06:28:17 --> Helper loaded: url_helper
+INFO - 2017-12-11 06:28:17 --> Helper loaded: language_helper
+INFO - 2017-12-11 06:28:17 --> Database Driver Class Initialized
+INFO - 2017-12-11 06:28:17 --> Controller Class Initialized
+INFO - 2017-12-11 06:28:17 --> Session: Class initialized using 'database' driver.
+DEBUG - 2017-12-11 06:28:17 --> Content MX_Controller Initialized
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/settings/libraries/settings_lib.php
+INFO - 2017-12-11 06:28:17 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/settings/models/settings_model.php
+INFO - 2017-12-11 06:28:17 --> Model Class Initialized
+INFO - 2017-12-11 06:28:17 --> Helper loaded: config_file_helper
+INFO - 2017-12-11 06:28:17 --> Helper loaded: directory_helper
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/ui/libraries/contexts.php
+DEBUG - 2017-12-11 06:28:17 --> UI/Contexts setContexts has been called.
+DEBUG - 2017-12-11 06:28:17 --> UI/Contexts library loaded
+DEBUG - 2017-12-11 06:28:17 --> Template library loaded
+DEBUG - 2017-12-11 06:28:17 --> Assets library loaded.
+INFO - 2017-12-11 06:28:17 --> Helper loaded: form_helper
+INFO - 2017-12-11 06:28:17 --> Form Validation Class Initialized
+INFO - 2017-12-11 06:28:17 --> Helper loaded: application_helper
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/libraries/auth.php
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/language/english/users_lang.php
+DEBUG - 2017-12-11 06:28:17 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/language/english/users_lang'
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/users/models/user_model.php
+INFO - 2017-12-11 06:28:17 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> Auth class initialized.
+DEBUG - 2017-12-11 06:28:17 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/language/english/application_lang.php'
+DEBUG - 2017-12-11 06:28:17 --> Forensics Console library loaded
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/permissions/models/permission_model.php
+INFO - 2017-12-11 06:28:17 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/roles/models/role_permission_model.php
+INFO - 2017-12-11 06:28:17 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/dashboard/language/english/dashboard_lang.php
+DEBUG - 2017-12-11 06:28:17 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/dashboard/language/english/dashboard_lang'
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/activities/models/activity_model.php
+INFO - 2017-12-11 06:28:17 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/activities/language/english/activities_lang.php
+DEBUG - 2017-12-11 06:28:17 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/activities/language/english/activities_lang'
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/datausulan/models/datausulan_model.php
+INFO - 2017-12-11 06:28:17 --> Model Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/informasidatausulan/models/informasidatausulan_model.php
+INFO - 2017-12-11 06:28:17 --> Model Class Initialized
+INFO - 2017-12-11 06:28:17 --> User Agent Class Initialized
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/modules/ui/views/shortcut_keys.php
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/public/themes/admin/partials/_header.php
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/modules/dashboard/views/content/index.php
+DEBUG - 2017-12-11 06:28:17 --> User_agent class already loaded. Second attempt ignored.
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/public/themes/admin/partials/_footer.php
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/public/themes/admin/index.php
+DEBUG - 2017-12-11 06:28:17 --> Bonfire MY_Lang: Language file loaded: '/Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/bonfire/ci3/language/english/profiler_lang.php'
+DEBUG - 2017-12-11 06:28:17 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/simuh_pkp/application/views/profiler_template.php
+INFO - 2017-12-11 06:28:17 --> Final output sent to browser
+DEBUG - 2017-12-11 06:28:17 --> Total execution time: 0.1196

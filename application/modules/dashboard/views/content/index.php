@@ -93,7 +93,7 @@
             <!-- Tabs within a box -->
             <ul class="nav nav-tabs pull-right" role="tablist">
               <li class="active"><a href="#uker-chart" role="tab" data-toggle="tab">Unit Kerja</a></li>
-              <li><a href="#permintaan-chart"  data-toggle="tab">Permintaan x Verifikasi</a></li>
+              
               <li class="pull-left header"><i class="fa fa-bar-chart"></i> Chart Permintaan</li>
             </ul>
             <div class="tab-content no-padding">
@@ -104,10 +104,7 @@
                    </div>
               </div>
 
-              <div class="chart tab-pane " id="permintaan-chart" style="position: relative; height: 400px;">
-                  <div id="chartpermintaan" style="background:#FFFFFf;width: 100%; height: 400px;"> </div>
-              </div>
-
+              
             </div>
           </div>
           <!-- /.nav-tabs-custom -->
@@ -129,7 +126,7 @@
       },
       yAxis: {
           title: {
-              text: 'NKU'
+              text: 'Jumlah'
           }
       },
       plotOptions: {
@@ -145,7 +142,7 @@
       },
       
        series: [{
-          name: 'Nilai NKU',
+          name: 'Unitkerja',
           data: <?php echo json_encode($jsonnilaiperingkat); ?>
           
       }
