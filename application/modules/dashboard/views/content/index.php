@@ -8,6 +8,8 @@
 <script src="<?php echo base_url(); ?>assets/js/amcharts/exporting/filesaver.js" type="text/javascript" ></script>
 <script src="<?php echo base_url(); ?>assets/js/amcharts/exporting/jspdf.plugin.addimage.js" type="text/javascript" ></script>
 
+<script src="<?php echo base_url(); ?>themes/admin/plugins/highchart/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 <?php
   $this->load->library('convert');
@@ -97,7 +99,9 @@
             <div class="tab-content no-padding">
               <!-- Morris chart - Sales -->
               <div class="chart tab-pane active" id="uker-chart" style="position: relative; height: 400px;">
-                  <div id="chartunit" style="z-index:100;background:#FFFFFf; width: 100%; height: 400px;"> </div>
+                  <div id="chartunit" style="z-index:100;background:#FFFFFf; width: 100%; height: 400px;">
+                  asdf
+                   </div>
               </div>
 
               <div class="chart tab-pane " id="permintaan-chart" style="position: relative; height: 400px;">
@@ -108,109 +112,45 @@
           </div>
           <!-- /.nav-tabs-custom -->
 <script type="text/javascript">
-
-
-
-
-AmCharts.makeChart("chartpermintaan", {
-    type: "pie",
-    dataProvider: <?php echo $jsonbypermintaan; ?>,
-    titleField: "status",
-    valueField: "Jumlah",
-     labelsEnabled: false,
-    balloonText: "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-    "legend": {
-      "markerType": "circle",
-      "position": "bottom",
-      "autoMargins": false
-    },
-    exportConfig: {
-      menuTop: "21px",
-      menuBottom: "auto",
-      menuRight: "21px",
-      backgroundColor: "#00000",
-
-      menuItemStyle : {
-      backgroundColor     : '#EFEFEF',
-      rollOverBackgroundColor : '#DDDDDD'},
-
-      menuItems: [{
-        textAlign: 'center',
-        icon: '<?php echo base_url(); ?>assets/js/amcharts/images/export.png',
-        onclick:function(){},
-        items: [{
-          title: 'JPG',
-          format: 'jpg'
-        }, {
-          title: 'PNG',
-          format: 'png'
-        }, {
-          title: 'SVG',
-          format: 'svg'
-        }, {
-          title: 'PDF',
-          format: 'pdf'
-        }]
-      }]
-    }
-
-  }); 
-
-
-
-
-  AmCharts.makeChart("chartunit", {
-    type: "pie",
-    dataProvider: <?php echo $jsonbyunits; ?>,
-    titleField: "nama_eselon",
-    valueField: "Jumlah",
-     labelsEnabled: false,
-    balloonText: "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-    "legend": {
-      "markerType": "circle",
-      "position": "bottom",
-      "autoMargins": false
-    },
-    exportConfig: {
-      menuTop: "21px",
-      menuBottom: "auto",
-      menuRight: "21px",
-      backgroundColor: "#00000",
-
-      menuItemStyle : {
-      backgroundColor     : '#EFEFEF',
-      rollOverBackgroundColor : '#DDDDDD'},
-
-      menuItems: [{
-        textAlign: 'center',
-        icon: '<?php echo base_url(); ?>assets/js/amcharts/images/export.png',
-        onclick:function(){},
-        items: [{
-          title: 'JPG',
-          format: 'jpg'
-        }, {
-          title: 'PNG',
-          format: 'png'
-        }, {
-          title: 'SVG',
-          format: 'svg'
-        }, {
-          title: 'PDF',
-          format: 'pdf'
-        }]
-      }]
-    }
-
+ 
+   // perbulan
+  Highcharts.chart('chartunit', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: ''
+      },
+      subtitle: {
+          text: ''
+      },
+      xAxis: {
+          categories: <?php echo json_encode($jsonlabelperingkat); ?>
+      },
+      yAxis: {
+          title: {
+              text: 'NKU'
+          }
+      },
+      plotOptions: {
+          line: {
+              dataLabels: {
+                  enabled: true
+              },
+              enableMouseTracking: true
+          },
+          column: {
+          
+      }
+      },
+      
+       series: [{
+          name: 'Nilai NKU',
+          data: <?php echo json_encode($jsonnilaiperingkat); ?>
+          
+      }
+     ]
   });
-
-
-      $( "#tabs" ).tabs({
-        select: function(event, ui) {
-        //  console.log('Calling chart.invalidateSize()');
-          chart.invalidateSize();
-        }
-      });
-   
 </script>
         </section>
         <!-- /.Left col -->

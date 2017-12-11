@@ -81,8 +81,20 @@ class Content extends Admin_Controller
         Template::set('jsonbypermintaan', $jsonbypermintaan);
 
         $unitlaporan = $this->datausulan_model->getcountbyunit();
-        $jsonbyunits = json_encode($unitlaporan);
-        Template::set('jsonbyunits', $jsonbyunits);
+        //print_r($unitlaporan);
+        $jsonlabelperingkat =array();
+        $jsonnilaiperingkat =array();
+        if (isset($unitlaporan) && is_array($unitlaporan) && count($unitlaporan)) :
+        foreach ($unitlaporan as $record) : 
+            $jsonlabelperingkat[] = $record->nama_eselon;
+            $jsonnilaiperingkat[] = (double)$record->Jumlah;
+        endforeach;
+        endif;
+        Template::set('jsonlabelperingkat', $jsonlabelperingkat);
+        Template::set('jsonnilaiperingkat', $jsonnilaiperingkat);
+        //print_r($jsonnilaiperingkat);
+        //die();
+        //Template::set('jsonbyunits', $jsonbyunits);
         
     Template::set('toolbar_title', lang('dashboard_manage'));
 
