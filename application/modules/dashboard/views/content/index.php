@@ -1,13 +1,3 @@
-<script src="<?php echo base_url(); ?>assets/js/amcharts/amcharts.js" type="text/javascript" ></script>
-<script src="<?php echo base_url(); ?>assets/js/amcharts/serial.js" type="text/javascript" ></script>
-<script src="<?php echo base_url(); ?>assets/js/amcharts/pie.js" type="text/javascript" ></script>
-<script src="<?php echo base_url(); ?>assets/js/amcharts/exporting/amexport.js" type="text/javascript" ></script>
-<script src="<?php echo base_url(); ?>assets/js/amcharts/exporting/rgbcolor.js" type="text/javascript" ></script>
-<script src="<?php echo base_url(); ?>assets/js/amcharts/exporting/canvg.js" type="text/javascript" ></script>
-<script src="<?php echo base_url(); ?>assets/js/amcharts/exporting/jspdf.js" type="text/javascript" ></script>
-<script src="<?php echo base_url(); ?>assets/js/amcharts/exporting/filesaver.js" type="text/javascript" ></script>
-<script src="<?php echo base_url(); ?>assets/js/amcharts/exporting/jspdf.plugin.addimage.js" type="text/javascript" ></script>
-
 <script src="<?php echo base_url(); ?>themes/admin/plugins/highchart/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
@@ -142,7 +132,7 @@
       },
       
        series: [{
-          name: 'Unitkerja',
+          name: 'Unit Kerja',
           data: <?php echo json_encode($jsonnilaiperingkat); ?>
           
       }

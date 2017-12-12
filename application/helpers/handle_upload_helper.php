@@ -6,8 +6,8 @@
 		
 		$CI =& get_instance();
 		$max_size = 50000;
-		$max_width = 1200;
-		$max_height = 1000;
+		$max_width = 1880;
+		$max_height = 1850;
 		//die("masuk sini".$CI->settings['site.max_img_size']);
 		if($path==""){
 			$path=$CI->settings_lib->item('site.pathphoto');	

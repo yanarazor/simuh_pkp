@@ -42,7 +42,7 @@ class Content extends Admin_Controller
 	//	Template::set('satkeri', $satkeri);
 	//	$filename = "kertas_kerja1021.xls";
 
-        Template::set_block('sub_nav', 'content/_sub_nav');
+        
 
         Assets::add_module_js('datausulan', 'datausulan.js');
     }
@@ -54,6 +54,7 @@ class Content extends Admin_Controller
      */
     public function index()
     {
+        Template::set_block('sub_nav', 'content/_sub_nav');
         // Deleting anything?
         if (isset($_POST['delete'])) {
             $this->auth->restrict($this->permissionDelete);
@@ -129,13 +130,19 @@ class Content extends Admin_Controller
     public function create()
     {
         $this->auth->restrict($this->permissionCreate);
-        
+        $this->load->model('datausulan/provinsi_model');
+        $provinsis = $this->provinsi_model->find_all();
+        Template::set('provinsis', $provinsis);
+
+        $satkeri = $this->satker_model->find_all();
+        Template::set('satkeri', $satkeri);
+
         if (isset($_POST['save'])) {
             if ($insert_id = $this->save_datausulan()) {
                 log_activity($this->auth->user_id(), lang('datausulan_act_create_record') . ': ' . $insert_id . ' : ' . $this->input->ip_address(), 'datausulan');
-                Template::set_message(lang('datausulan_create_success'), 'success');
+                Template::set_message("Data usuldan telah tersimpan, silahkan lengkapi data detil barang", 'success');
 
-                redirect(SITE_AREA . '/content/datausulan');
+                redirect(SITE_AREA . '/content/datausulan/edit/'.$insert_id);
             }
 
             // Not validation error
@@ -148,7 +155,80 @@ class Content extends Admin_Controller
 
         Template::render();
     }
+    public function uploadbukti()
+    {
+        $this->auth->restrict($this->permissionCreate);
+        $id_detil = $this->uri->segment(5);
+        $kolom = $this->uri->segment(6);
+        Template::set('id_detil', $id_detil);
+        Template::set('kolom', $kolom);
+        Template::set('toolbar_title', "Upload bukti");
 
+        Template::render();
+    }
+    public function saveberkas(){
+         // Validate the data
+        $this->load->model('datausulan/barang_model');
+        $kolom = $this->input->post("kolom");
+        $nama_file = $this->input->post("nama_file");
+        $data = $this->barang_model->prep_data($this->input->post());
+        $data[$kolom]     = $nama_file;
+        $id_data = $this->input->post("id_detil");
+        if(isset($id_data) && !empty($id_data)){
+            $this->barang_model->update($id_data,$data,$this->input->post());
+        }
+        $response ['success']= true;
+        $response ['msg']= "berhasil";
+        echo json_encode($response);    
+
+    }
+    function uploadberkas(){
+        $this->load->model('barang/barang_model');
+        $kolom = $this->input->post('kolom');
+        $id_data = $this->input->post("id_detil");
+        $response = array(
+            'success'=>false,
+            'msg'=>'Unknown error',
+            'namafile'=>''
+        );
+
+        $this->load->helper('handle_upload');
+         $uploadData = array();
+         $upload = true;
+         $id = "";
+         $namafile = "";
+         //die("masuk".$this->settings_lib->item('site.pathuploaded'));
+         if (isset($_FILES['userfile']) && is_array($_FILES['userfile']) && $_FILES['userfile']['error'] != 4)
+         {
+            $tmp_name = pathinfo($_FILES['userfile']['name'], PATHINFO_FILENAME);
+            $uploadData = handle_upload('userfile',$this->settings_lib->item('site.pathuploaded'));
+             if (isset($uploadData['error']) && !empty($uploadData['error']))
+             {
+                $tipefile=$_FILES['userfile']['type'];
+                //$tipefile = $_FILES['userfile']['name'];
+                 $upload = false;
+                 log_activity($this->auth->user_id(), 'Gagal : '.$uploadData['error']." ".$this->settings_lib->item('site.pathuploaded'). " ".$tipefile.$this->input->ip_address(), 'galleri');
+             }else{
+                
+                $namafile = $uploadData['data']['file_name'];
+             }
+         }else{
+            die("File tidak ditemukan");
+            log_activity($this->auth->user_id(), 'File tidak ditemukan : ' . $this->input->ip_address(), 'galleri');
+         }  
+
+        $data = $this->barang_model->prep_data($this->input->post());
+        $data[$kolom]     = $namafile;
+        $id_data = $this->input->post("id_detil");
+        if(isset($id_data) && !empty($id_data)){
+            $this->barang_model->update($id_data,$data,$this->input->post());
+        }
+        $response ['success']= true;
+        $response ['msg']= "berhasil";
+        echo json_encode($response);    
+        //echo json_encode($response);    
+       exit();
+    }
     public function savedata()
     {
     	$insert_id = 0;
@@ -362,8 +442,10 @@ private function save_barang($nomor_usulan ="",$kode_barang="",$nama="",$merek =
 		
 		$satkeri = $this->satker_model->find_all();
 		Template::set('satkeri', $satkeri);
-		
-		
+		$this->load->model('barang/barang_model');
+		$this->load->model('datausulan/provinsi_model');
+        $provinsis = $this->provinsi_model->find_all();
+        Template::set('provinsis', $provinsis);
         $id = $this->uri->segment(5);
         if (empty($id)) {
             Template::set_message(lang('datausulan_invalid_id'), 'error');
@@ -373,8 +455,18 @@ private function save_barang($nomor_usulan ="",$kode_barang="",$nama="",$merek =
         
         if (isset($_POST['save'])) {
             $this->auth->restrict($this->permissionEdit);
-
             if ($this->save_datausulan('update', $id)) {
+                $this->load->model('barang/barang_model');
+                //save ke tabel barang
+                $id_data = $this->input->post("id_barang");
+                $data = $this->barang_model->prep_data($this->input->post());
+                $data["nomor_usulan"]     = $id;
+                if(isset($id_data) && !empty($id_data)){
+                    $this->barang_model->update($id_data,$data,$this->input->post());
+                }else{
+                    $this->barang_model->insert($data);    
+                }
+                // end save barang
                 log_activity($this->auth->user_id(), lang('datausulan_act_edit_record') . ': ' . $id . ' : ' . $this->input->ip_address(), 'datausulan');
                 Template::set_message(lang('datausulan_edit_success'), 'success');
                 redirect(SITE_AREA . '/content/datausulan');
@@ -388,7 +480,7 @@ private function save_barang($nomor_usulan ="",$kode_barang="",$nama="",$merek =
         
         elseif (isset($_POST['delete'])) {
             $this->auth->restrict($this->permissionDelete);
-			$this->load->model('barang/barang_model');
+			
             if ($this->datausulan_model->delete($id)) {
             	$datadel = array('nomor_usulan '=>$id);
 				$this->barang_model->delete_where($datadel);
@@ -402,8 +494,15 @@ private function save_barang($nomor_usulan ="",$kode_barang="",$nama="",$merek =
 
             Template::set_message(lang('datausulan_delete_failure') . $this->datausulan_model->error, 'error');
         }
-        
-        Template::set('datausulan', $this->datausulan_model->find($id));
+        $detildata = $this->datausulan_model->find($id);
+        $this->load->model('kabupaten/kabupaten_model', null, true);
+        $kabupatens = $this->kabupaten_model->GetByprovinsi($detildata->provinsi);
+        Template::set('kabupatens', $kabupatens);
+
+        Template::set('datausulan', $detildata);
+
+        $detilbarangs = $this->barang_model->limit(1)->find_by("nomor_usulan",$id);
+        Template::set('detilbarangs', $detilbarangs);
 
         Template::set('toolbar_title', lang('datausulan_edit_heading'));
         Template::render();

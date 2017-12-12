@@ -1,15 +1,9 @@
 <link href="<?php echo base_url() ?>assets/css/dropzone/dropzone.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url() ?>assets/css/custom_inputs.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo  base_url() ?>assets/js/dropzone/dropzone.min.js" type="text/javascript"></script>
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>themes/admin/plugins/datepicker/datepicker3.css">
 
-<section class="content">
-    <div class="container-fluid">
-        <div class="block-header">
-            <h2>Logs</h2>
-        </div>
-        <div class="row clearfix">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                   <div class="body card-underline">
 
 <?php 
 
@@ -28,59 +22,111 @@ endif;
 $id = isset($datausulan->id) ? $datausulan->id : '';
 
 ?>
-<div class='admin-box'>
+<div class="box box-warning">
+<div class="box-body">
     <h3>Data Usulan</h3>
     <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal" id="frmdata"'); ?>
         <fieldset>
 		
      		<div class="control-group <?php echo form_error('kode_eselon') ? 'error' : ''; ?>">
                 <?php echo form_label(lang('datausulan_field_kode_eselon') . lang('bf_form_label_required'), 'kode_eselon', array('class' => 'control-label')); ?>
-				<div class='controls'>
-					<span class="custom-dropdown small">
-                	<select name="kode_eselon" id="kode_eselon" class="span6 chosen-select-deselect">
-						<option value="">-- Pilih Kode Eselon --</option>
-						<?php if (isset($eseloni) && is_array($eseloni) && count($eseloni)):?>
-						<?php foreach($eseloni as $eselonis):?>
-							<option value="<?php echo $eselonis->kode_eselon?>" <?php if(isset($datausulan['kode_eselon']))  echo  ($eselonis->kode_eselon==$datausulan['kode_eselon']) ? "selected" : ""; ?>><?php echo $eselonis->nama_eselon; ?></option>
-							<?php endforeach;?>
-						<?php endif;?>
-						</span>
-					</select>
-					<span class='help-inline'><?php echo form_error('kode_eselon'); ?></span>
-				</div>
-			</div>
-
-
-     		<div class="control-group <?php echo form_error('kode_satker') ? 'error' : ''; ?>">
-                <?php echo form_label(lang('datausulan_field_kode_satker') . lang('bf_form_label_required'), 'kode_eselon', array('class' => 'control-label')); ?>
-				<div class='controls'>
-				<span class="custom-dropdown small">
-                	<select name="kode_satker" id="kode_satker" class="span6 chosen-select-deselect">		
-						<option value="">-- Pilih Satuan Kerja --</option>
-						<?php if (isset($satkeri) && is_array($satkeri) && count($satkeri)):?>
-						<?php foreach($satkeri as $satkeris):?>
-							<option value="<?php echo $satkeris->kode_satker?>" <?php if(isset($datausulan['kode_satker']))  echo  ($satkeris->kode_satker==$datausulan['kode_satker']) ? "selected" : ""; ?>><?php echo $satkeris->nama_satker; ?></option>
-							<?php endforeach;?>
-						<?php endif;?>
-						</span>
-					</select>
-					<span class='help-inline'><?php echo form_error('kode_eselon'); ?></span>
-				</div>
-			</div>
+                <div class='controls'>
+                    <span class="custom-dropdown small">
+                    <select name="kode_eselon" id="kode_eselon" class="span6 chosen-select-deselect">
+                        <option value="">-- Pilih Kode Eselon --</option>
+                        <?php if (isset($eseloni) && is_array($eseloni) && count($eseloni)):?>
+                        <?php foreach($eseloni as $eselonis):?>
+                            <option value="<?php echo $eselonis->kode_eselon?>" <?php if(isset($datausulan->kode_eselon))  echo  ($eselonis->kode_eselon==$datausulan->kode_eselon) ? "selected" : ""; ?>><?php echo $eselonis->nama_eselon; ?></option>
+                            <?php endforeach;?>
+                        <?php endif;?>
+                    </select>
+                    </span>
+                    <span class='help-inline'><?php echo form_error('kode_eselon'); ?></span>
+                </div>
+            </div>
+            <div class="control-group <?php echo form_error('kode_satker') ? 'error' : ''; ?>">
+                <?php echo form_label(lang('datausulan_field_kode_satker') . lang('bf_form_label_required'), 'kode_satker', array('class' => 'control-label')); ?>
+                <div class='controls'>
+                <span class="custom-dropdown small">
+                    <select name="kode_satker" id="kode_satker" class="span6 chosen-select-deselect">
+                        <option value="">-- Pilih Kode Satker --</option>
+                        <?php if (isset($satkeri) && is_array($satkeri) && count($satkeri)):?>
+                        <?php foreach($satkeri as $satkeris):?>
+                            <option value="<?php echo $satkeris->kode_satker?>" <?php if(isset($datausulan->kode_satker))  echo  ($satkeris->kode_satker==$datausulan->kode_satker) ? "selected" : ""; ?>><?php echo $satkeris->nama_satker; ?></option>
+                            <?php endforeach;?>
+                        <?php endif;?>
+                    </select>
+                    </span>
+                    <span class='help-inline'><?php echo form_error('kode_satker'); ?></span>
+                </div>
+            </div>
+            <div class="control-group <?php echo form_error('kode_eselon') ? 'error' : ''; ?>">
+                <?php echo form_label("Provinsi" . lang('bf_form_label_required'), 'kode_eselon', array('class' => 'control-label')); ?>
+                <div class='controls'>
+                    <span class="custom-dropdown small">
+                    <select name="provinsi" id="provinsi" class="form-control chosen-select-deselect">
+                        <option value="">-- Pilih Provinsi --</option>
+                        <?php if (isset($provinsis) && is_array($provinsis) && count($provinsis)):?>
+                        <?php foreach($provinsis as $record):?>
+                            <option value="<?php echo $record->id?>" <?php if(isset($datausulan->provinsi))  echo  ($record->id==$datausulan->provinsi) ? "selected" : ""; ?>><?php echo $record->prov; ?></option>
+                            <?php endforeach;?>
+                        <?php endif;?>
+                    </select>
+                    </span>
+                    <span class='help-inline'><?php echo form_error('kode_eselon'); ?></span>
+                </div>
+            </div>
+            <div class="control-group <?php echo form_error('kabupaten') ? 'error' : ''; ?>">
+                <?php echo form_label("Kabupaten" . lang('bf_form_label_required'), 'kode_eselon', array('class' => 'control-label')); ?>
+                <div class='controls'>
+                    <span class="custom-dropdown small">
+                    <select name="kabupaten" id="ID_KAB" class="form-control chosen-select-deselect">
+                        <option value="">-- Pilih Provinsi --</option>
+                        <?php if (isset($kabupatens) && is_array($kabupatens) && count($kabupatens)):?>
+                        <?php foreach($kabupatens as $record):?>
+                            <option value="<?php echo $record->id?>" <?php if(isset($datausulan->kabupaten))  echo  ($record->id==$datausulan->kabupaten) ? "selected" : ""; ?>><?php echo $record->kab; ?></option>
+                            <?php endforeach;?>
+                        <?php endif;?>
+                    </select>
+                    </span>
+                    <span class='help-inline'><?php echo form_error('kode_eselon'); ?></span>
+                </div>
+            </div>
+            
+            <div class="control-group<?php echo form_error('dinas') ? ' error' : ''; ?>">
+                <?php echo form_label("Dinas" . lang('bf_form_label_required'), 'dinas', array('class' => 'control-label')); ?>
+                <div class='controls'>
+                    <input class="form-control" id='dinas' type='text' required='required' name='dinas' maxlength='255' value="<?php echo set_value('dinas', isset($datausulan->dinas) ? $datausulan->dinas : ''); ?>" />
+                    <span class='help-inline'><?php echo form_error('dinas'); ?></span>
+                </div>
+            </div>
+             <div class="control-group<?php echo form_error('penerima_bantuan') ? ' error' : ''; ?>">
+                <?php echo form_label("Penerima Bantuan" . lang('bf_form_label_required'), 'penerima_bantuan', array('class' => 'control-label')); ?>
+                <div class='controls'>
+                    <input class="form-control" id='penerima_bantuan' type='text' required='required' name='penerima_bantuan' maxlength='255' value="<?php echo set_value('penerima_bantuan', isset($datausulan->penerima_bantuan) ? $datausulan->penerima_bantuan : ''); ?>" />
+                    <span class='help-inline'><?php echo form_error('penerima_bantuan'); ?></span>
+                </div>
+            </div>
+             <div class="control-group<?php echo form_error('kegiatan_bantuan') ? ' error' : ''; ?>">
+                <?php echo form_label("Kegiatan Bantuan" . lang('bf_form_label_required'), 'kegiatan_bantuan', array('class' => 'control-label')); ?>
+                <div class='controls'>
+                    <input class="form-control" id='kegiatan_bantuan' type='text' required='required' name='kegiatan_bantuan' maxlength='255' value="<?php echo set_value('kegiatan_bantuan', isset($datausulan->kegiatan_bantuan) ? $datausulan->kegiatan_bantuan : ''); ?>" />
+                    <span class='help-inline'><?php echo form_error('kegiatan_bantuan'); ?></span>
+                </div>
+            </div>
 
             <div class="control-group<?php echo form_error('no_surat_usulan') ? ' error' : ''; ?>">
                 <?php echo form_label(lang('datausulan_field_no_surat_usulan') . lang('bf_form_label_required'), 'no_surat_usulan', array('class' => 'control-label')); ?>
                 <div class='controls'>
-                    <input class="enjoy-css" id='no_surat_usulan' type='text' required='required' name='no_surat_usulan' maxlength='255' value="<?php echo set_value('no_surat_usulan', isset($datausulan->no_surat_usulan) ? $datausulan->no_surat_usulan : ''); ?>" />
+                    <input class="form-control" id='no_surat_usulan' type='text' required='required' name='no_surat_usulan' maxlength='255' value="<?php echo set_value('no_surat_usulan', isset($datausulan->no_surat_usulan) ? $datausulan->no_surat_usulan : ''); ?>" />
                     <span class='help-inline'><?php echo form_error('no_surat_usulan'); ?></span>
                 </div>
             </div>
 
-
             <div class="control-group<?php echo form_error('tgl_usulan') ? ' error' : ''; ?>">
                 <?php echo form_label(lang('datausulan_field_tgl_usulan') . lang('bf_form_label_required'), 'tgl_usulan', array('class' => 'control-label')); ?>
                 <div class='controls'>
-                    <input class="enjoy-css" id='tgl_usulan' type='text' required='required' name='tgl_usulan'  value="<?php echo set_value('tgl_usulan', isset($datausulan->tgl_usulan) ? $datausulan->tgl_usulan : ''); ?>" />
+                    <input class="datepicker" id='tgl_usulan' type='text' required='required' name='tgl_usulan'  value="<?php echo set_value('tgl_usulan', isset($datausulan->tgl_usulan) ? $datausulan->tgl_usulan : ''); ?>" />
                     <span class='help-inline'><?php echo form_error('tgl_usulan'); ?></span>
                 </div>
             </div>
@@ -113,16 +159,19 @@ $id = isset($datausulan->id) ? $datausulan->id : '';
 			
 			
         </fieldset>
+        <!--
         <fieldset>
         	<legend> File Detil </legend>
               <div class="dropzone well well-sm data_upload">
               </div>
-        <fieldset class='form-actions'>
+        -->
+        </div>
+        <div class='box-footer'>
             <input type='submit' name='save' class='btn btn-primary' value="<?php echo lang('datausulan_action_create'); ?>" />
             <?php echo lang('bf_or'); ?>
             <?php echo anchor(SITE_AREA . '/content/datausulan', 'Kembali', 'class="btn btn-warning"'); ?>
             
-        </fieldset>
+        </div>
     <?php echo form_close(); ?>
 </div>
 
@@ -247,11 +296,15 @@ staffid : "991234"
 </script>
 
 
+<script src="<?php echo base_url(); ?>themes/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
 <script>
+    //Date picker
+    $('.datepicker').datepicker({
+      autoclose: true,format: 'yyyy-mm-dd'
+    });
 $(document).ready(function () {
     $('#kode_eselon1').change(function () {
     	var json_url = "<?php echo base_url() ?>index.php/admin/master/satker/getbyeselon";
-    	alert(json_url);
         var selProv = $(this).val();
         console.log(selProv);  			//menampilan pada log browser apa yang dibawa pada saat dipilih pada combo box
         $.ajax({
@@ -267,7 +320,24 @@ $(document).ready(function () {
         })
     });
  });
-
+ $("#provinsi").change(function(){
+            var id_provinsi = $("#provinsi").val();
+            $("#ID_KAB").empty().append("<option>loading...</option>"); //show loading...
+            var json_url = "<?php echo base_url(); ?>index.php/admin/masters/kabupaten/getbyprovinsiterpilih?id_provinsi=" + encodeURIComponent(id_provinsi);
+            $.getJSON(json_url,function(data){
+                $("#ID_KAB").empty(); 
+                if(data==""){
+                    $("#ID_KAB").append("<option value=\"\">Pilih Kabupaten </option>");
+                }
+                else{
+                    $("#ID_KAB").append("<option value=\"\">-- Pilih Kabupaten --</option>");
+                    for(i=0; i<data.id.length; i++){
+                        $("#ID_KAB").append("<option value=\"" + data.id[i]  + "\">" + data.kab[i] +"</option>");
+                    }
+                }
+            });
+            return false;
+        }); 
  $("#kode_eselon").change(function(){
 			var eselon = $("#kode_eselon").val();
 			$("#kode_satker").empty().append("<option>loading...</option>"); //show loading...

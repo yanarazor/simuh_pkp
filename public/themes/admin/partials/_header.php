@@ -208,6 +208,9 @@
          <?php if ($this->auth->has_permission('News.Content.View')) : ?>
           <li><a href="<?php echo base_url();?>index.php/admin/content/news"><i class="fa fa-circle-o"></i>Informasi dan Berita</a></li>
           <?php endif; ?>
+          <?php if ($this->auth->has_permission('Galleri.Content.View')) : ?>
+          <li><a href="<?php echo base_url();?>index.php/admin/content/galleri"><i class="fa fa-circle-o"></i>Galleri</a></li>
+          <?php endif; ?>
 
          <?php if ($this->auth->has_permission('Informasidatausulan.Content.View')) : ?>
           <li><a href="<?php echo base_url();?>index.php/admin/content/Informasidatausulan"><i class="fa fa-circle-o"></i>Informasi Data Usulan</a></li>
