@@ -89,7 +89,7 @@ class Content extends Admin_Controller
         $row_b = array();
         $row_b['name'] = 'Data Verifikasi';
         $row_c = array();
-        $row_c['name'] = 'Data Verifikasi';
+        $row_c['name'] = 'Data Blm Verifikasi';
         if (isset($unitlaporan) && is_array($unitlaporan) && count($unitlaporan)) :
         foreach ($unitlaporan as $record) : 
             $jsonlabelperingkat[] = $record->nama_eselon;
