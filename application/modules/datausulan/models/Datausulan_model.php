@@ -127,7 +127,11 @@ class Datausulan_model extends BF_Model
 	{
 		if(empty($this->selects))
 		{
-			$this->select($this->table_name .'.status,count(sly_datausulan.kode_eselon) as Jumlah,nama_eselon');
+			$this->select($this->table_name .'.status,count(sly_datausulan.kode_eselon) as Jumlah,
+			nama_eselon,
+			(select count(*) from sly_datausulan v where status = 1 and v.kode_eselon = sly_datausulan.kode_eselon) as jumlahverifikasi,
+			(select count(*) from sly_datausulan v where status != 1 and v.kode_eselon = sly_datausulan.kode_eselon) as jumlahblmverifikasi,
+			');
 		}
 		$this->db->join('eselon', 'eselon.kode_eselon = datausulan.kode_eselon', 'left');
 		$this->db->group_by('eselon.nama_eselon');   
