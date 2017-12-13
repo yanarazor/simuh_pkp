@@ -134,4 +134,26 @@ class Datausulan_model extends BF_Model
 		  
 		return parent::find_all();
 	}
+	public function getcountbyunitverifikasi()
+	{
+		if(empty($this->selects))
+		{
+			$this->select($this->table_name .'.status,count(sly_datausulan.kode_eselon) as Jumlah,nama_eselon');
+		}
+		$this->db->join('eselon', 'eselon.kode_eselon = datausulan.kode_eselon', 'left');
+		$this->db->group_by('eselon.nama_eselon');   
+		$this->db->where("status",1);
+		return parent::find_all();
+	}
+	public function getcountblmverifikasi()
+	{
+		if(empty($this->selects))
+		{
+			$this->select($this->table_name .'.status,count(sly_datausulan.kode_eselon) as Jumlah,nama_eselon');
+		}
+		$this->db->join('eselon', 'eselon.kode_eselon = datausulan.kode_eselon', 'left');
+		$this->db->group_by('eselon.nama_eselon');   
+		$this->db->where("status != 1");
+		return parent::find_all();
+	}
 }

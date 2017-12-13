@@ -93,8 +93,6 @@
                   asdf
                    </div>
               </div>
-
-              
             </div>
           </div>
           <!-- /.nav-tabs-custom -->
@@ -131,13 +129,9 @@
       }
       },
       
-       series: [{
-          name: 'Unit Kerja',
-          data: <?php echo json_encode($jsonnilaiperingkat); ?>
-          
-      }
-     ]
+       series:<?php echo json_encode($jsonnilaiperingkat); ?>
   });
+
 </script>
         </section>
         <!-- /.Left col -->

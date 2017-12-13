@@ -83,16 +83,43 @@ class Content extends Admin_Controller
         $unitlaporan = $this->datausulan_model->getcountbyunit();
         //print_r($unitlaporan);
         $jsonlabelperingkat =array();
-        $jsonnilaiperingkat =array();
+        $jsonnilaiperingkat[] =array();
+        $row_a = array();
+        $row_a['name'] = 'Jumlah data';
         if (isset($unitlaporan) && is_array($unitlaporan) && count($unitlaporan)) :
         foreach ($unitlaporan as $record) : 
             $jsonlabelperingkat[] = $record->nama_eselon;
-            $jsonnilaiperingkat[] = (double)$record->Jumlah;
+            //$jsonnilaiperingkat[] = (double)$record->Jumlah;
+            $row_a['data'][] = (double)$record->Jumlah;
         endforeach;
         endif;
+
+        $recordverifikasi = $this->datausulan_model->getcountbyunitverifikasi();
+        $row_b = array();
+        $row_b['name'] = 'Data Verifikasi';
+        if (isset($recordverifikasi) && is_array($recordverifikasi) && count($recordverifikasi)) :
+        foreach ($recordverifikasi as $record) : 
+            $row_b['data'][] = (double)$record->Jumlah;
+        endforeach;
+        endif;
+
+        $recordblmverifikasi = $this->datausulan_model->getcountblmverifikasi();
+        $row_c = array();
+        $row_c['name'] = 'Data Verifikasi';
+        if (isset($recordblmverifikasi) && is_array($recordblmverifikasi) && count($recordblmverifikasi)) :
+        foreach ($recordblmverifikasi as $record) : 
+            $row_c['data'][] = (double)$record->Jumlah;
+        endforeach;
+        endif;
+
+        $result = array();
+        array_push($result, $row_a);
+        array_push($result, $row_b);
+        array_push($result, $row_c);
+
         Template::set('jsonlabelperingkat', $jsonlabelperingkat);
-        Template::set('jsonnilaiperingkat', $jsonnilaiperingkat);
-        //print_r($jsonnilaiperingkat);
+        Template::set('jsonnilaiperingkat', $result);
+        //echo json_encode($jsonnilaiperingkat);
         //die();
         //Template::set('jsonbyunits', $jsonbyunits);
         
